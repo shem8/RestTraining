@@ -1,0 +1,37 @@
+<h1>New Rest</h1>
+
+<%= form_for :restaurant, url:restaurants_path  do |f| %>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :genre %><br>
+      <%= f.text_field :genre %>
+    </p>
+
+    <p>
+      <%= f.label :rating %><br>
+      <%= f.text_field :rating %>
+    </p>
+
+    <p>
+      <%= f.label :accept_10bis %><br>
+      <%= f.text_field :accept_10bis %>
+    </p>
+
+    <p>
+      <%= f.label :address %><br>
+      <%= f.text_field :address %>
+    </p>
+
+    <p>
+      <%= f.label :delivery_time %><br>
+      <%= f.text_field :delivery_time %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
