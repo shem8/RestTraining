@@ -42,4 +42,12 @@ describe RestaurantsController do
     delete :destroy, id: rest
     response.should redirect_to restaurants_url
   end
+
+
+  it "edit restaurant" do
+    rest = FactoryGirl.create(:restaurant)
+    put :update, id: rest, rest: FactoryGirl.attributes_for(:restaurant, name: "New name")
+    rest.reload
+    expect(rest.name).to eq("New name")
+  end
 end
