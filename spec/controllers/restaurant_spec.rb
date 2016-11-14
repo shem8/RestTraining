@@ -1,0 +1,2 @@
+describe RestaurantsController do
+end
