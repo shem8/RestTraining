@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
-  def new
+  def index
+    @rests = Restaurant.all
   end
 
   def create
@@ -7,6 +8,9 @@ class RestaurantsController < ApplicationController
 
     @rest.save
     redirect_to @rest
+  end
+
+  def new
   end
 
   def show

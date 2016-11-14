@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>Genre:</th>
+    <th>Rating:</th>
+    <th>Accept 10 bis?</th>
+    <th>Address:</th>
+    <th>Delivery time:</th>
+    <th>Name:</th>
+  </tr>
+
+  <% @rests.each do |rest| %>
+      <tr>
+        <td><%= rest.name %></td>
+        <td><%= rest.genre %></td>
+        <td><%= rest.rating %></td>
+        <td><%= rest.accept_10bis %></td>
+        <td><%= rest.address %></td>
+        <td><%= rest.delivery_time %></td>
+        <td><%= link_to 'Show', restaurant_path(rest) %></td>
+      </tr>
+  <% end %>
+</table>
