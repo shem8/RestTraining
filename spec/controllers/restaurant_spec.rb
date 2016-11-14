@@ -5,29 +5,41 @@ describe RestaurantsController do
   # end
 
   describe "GET #index" do
-    it "populates an array of contacts"
-    it "renders the :index view"
+    it "populates an array of restaurants" do
+      rest = FactoryGirl.create(:restaurant)
+      get :index
+      assigns(:rests).should eq([rest])
+    end
+
+    it "renders the :index view" do
+      get :index
+      response.should render_template :index
+    end
   end
 
   describe "GET #show" do
-    it "assigns the requested contact to @contact"
-    it "renders the :show template"
-  end
-
-  describe "GET #new" do
-    it "assigns a new Contact to @contact"
-    it "renders the :new template"
-  end
-
-  describe "POST #create" do
-    context "with valid attributes" do
-      it "saves the new contact in the database"
-      it "redirects to the home page"
+    it "assigns the requested restaurant to @restaurant" do
+      rest = FactoryGirl.create(:restaurant)
+      get :show, id: rest
+      assigns(:rest).should eq(rest)
     end
 
-    context "with invalid attributes" do
-      it "does not save the new contact in the database"
-      it "re-renders the :new template"
+    it "renders the :show template" do
+      get :show, id: FactoryGirl.create(:restaurant)
+      response.should render_template :show
     end
+  end
+
+  it "deletes restaurant" do
+    rest = FactoryGirl.create(:restaurant)
+    expect{
+      delete :destroy, id: rest
+    }.to change(Restaurant,:count).by(-1)
+  end
+
+  it "redirects to restaurant#index" do
+    rest = FactoryGirl.create(:restaurant)
+    delete :destroy, id: rest
+    response.should redirect_to restaurants_url
   end
 end
