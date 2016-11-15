@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: restaurants
+#
+#  id            :integer          not null, primary key
+#  name          :string
+#  genre         :string
+#  rating        :integer
+#  accept_10bis  :boolean
+#  address       :string
+#  delivery_time :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  genre: MyString
+  rating: 1
+  accept_10bis: false
+  address: MyString
+  delivery_time: 1
+
+two:
+  name: MyString
+  genre: MyString
+  rating: 1
+  accept_10bis: false
+  address: MyString
+  delivery_time: 1

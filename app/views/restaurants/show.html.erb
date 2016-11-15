@@ -1,0 +1,32 @@
+<p>
+  <strong>Name:</strong>
+  <%= @rest.name %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @rest.genre %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @rest.rating %>
+</p>
+
+<p>
+  <strong>Accept 10 bis?</strong>
+  <%= @rest.accept_10bis %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @rest.address %>
+</p>
+
+<p>
+  <strong>Delivery time:</strong>
+  <%= @rest.delivery_time %>
+</p>
+
+<%= link_to 'Edit', edit_restaurant_path(@rest) %> |
+<%= link_to 'Back', restaurants_path %>

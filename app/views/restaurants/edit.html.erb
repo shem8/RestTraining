@@ -1,0 +1,39 @@
+<h1>New Rest</h1>
+
+<%= form_for :rest, url:restaurant_path(@rest), method: :patch do |f|%>
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :genre %><br>
+      <%= f.text_field :genre %>
+    </p>
+
+    <p>
+      <%= f.label :rating %><br>
+      <%= f.number_field :rating %>
+    </p>
+
+    <p>
+      <%= f.label :accept_10bis %><br>
+      <%= f.check_box :accept_10bis %>
+    </p>
+
+    <p>
+      <%= f.label :address %><br>
+      <%= f.text_field :address %>
+    </p>
+
+    <p>
+      <%= f.label :delivery_time %><br>
+      <%= f.number_field :delivery_time %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+
+<%= link_to 'Back', restaurants_path %>
